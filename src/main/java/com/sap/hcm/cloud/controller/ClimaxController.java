@@ -2,20 +2,19 @@ package com.sap.hcm.cloud.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-@RestController
+@Controller
 @RequestMapping("/climax")
 public class ClimaxController {
 	
-	private static Logger logger = LoggerFactory.getLogger(PreludeController.class.getName());
+	private static Logger logger = LoggerFactory.getLogger(ClimaxController.class.getName());
 	
 	@RequestMapping("/homePage")
-	public void homePage(){
+	public String homePage(){
 		logger.info("enter into home page");
+		return "climax/homePage";
 	}
 
 }

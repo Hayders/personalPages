@@ -11,13 +11,11 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sap.hcm.cloud.bean.Captcha;
@@ -26,8 +24,7 @@ import com.sap.hcm.cloud.entity.UserInfo;
 import com.sap.hcm.cloud.service.ImageCaptchaService;
 import com.sap.hcm.cloud.service.UserInfoService;
 
-@SpringBootApplication
-@RestController
+@Controller
 @RequestMapping("/prelude")
 public class PreludeController {
 
@@ -44,13 +41,15 @@ public class PreludeController {
 //	Gson gson = new Gson();
 
 	@RequestMapping(value = "/login")
-	public void Login() {
+	public String Login() {
 		logger.info("enter into login page");
+		return "prelude/login";
 	}
 
 	@RequestMapping(value = "/register")
-	public void Register() {
+	public String Register() {
 		logger.info("enter into register page");
+		return "prelude/register";
 	}
 
 	@RequestMapping(value = "/verifyLogin", method = RequestMethod.POST)
