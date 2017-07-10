@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sap.hcm.cloud</groupId>
-	<artifactId>personalPages</artifactId>
-	<packaging>jar</packaging>
+	<artifactId>personal-page</artifactId>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>personalPages Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -13,6 +13,7 @@
 		<java.version>1.8</java.version>
 		<!-- 这里指定项目编码 -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<imagename.prefix>wahts</imagename.prefix>
 	</properties>
 
 	<parent>
@@ -98,13 +99,13 @@
 				<artifactId>docker-maven-plugin</artifactId>
 				<version>0.4.11</version>
 				<configuration>
-					<imageName>whats/${project.artifactId}</imageName>
+					<imageName>${imagename.prefix}/${project.artifactId}</imageName>
 					<dockerDirectory>src/main/resources</dockerDirectory>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
 							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
+							<include>${project.build.finalName}.war</include>
 						</resource>
 					</resources>
 				</configuration>
