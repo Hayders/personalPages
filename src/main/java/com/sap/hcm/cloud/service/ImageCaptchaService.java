@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 @Component("ImageCaptcha")
+@Service
 public class ImageCaptchaService {
 
 	@Value("${ImageCaptcha.width}")

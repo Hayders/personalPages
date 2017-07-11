@@ -37,8 +37,18 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+        	<groupId>org.springframework.boot</groupId>
+      		<artifactId>spring-boot-starter-web</artifactId>
+    	</dependency>
+    	<dependency>
+      		<groupId>org.springframework.boot</groupId>
+      		<artifactId>spring-boot-starter-data-jpa</artifactId>
+    	</dependency>
+   
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.37</version>
 		</dependency>
 		
 		<!-- 这里指定打包的时候不再需要tomcat相关的包 -->
@@ -58,24 +68,21 @@
 		</dependency>
 		
 		<!-- Use eclipselink instead of hibernate -->
-		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>eclipselink</artifactId>
-			<version>2.5.0</version>
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<exclusions>
 				<exclusion>
-					<groupId>org.eclipse.persistence</groupId>
-					<artifactId>commonj.sdo</artifactId>
+					<groupId>org.hibernate</groupId>
+					<artifactId>hibernate-entitymanager</artifactId>
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
-		<!--use mysql as database  -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.37</version>
-		</dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>2.6.4</version>
+        </dependency> -->
 	</dependencies>
 	
 	<build>

@@ -17,7 +17,7 @@ public class UserInfoService {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-
+	
 	private static final Logger logger = LoggerFactory.getLogger(UserInfoService.class);
 
 	/**
