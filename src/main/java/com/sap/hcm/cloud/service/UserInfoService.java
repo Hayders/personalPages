@@ -2,21 +2,24 @@ package com.sap.hcm.cloud.service;
 
 
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sap.hcm.cloud.Dao.UserInfoRepository;
 import com.sap.hcm.cloud.entity.UserInfo;
 
 @Service
 public class UserInfoService {
 
-	@PersistenceContext
-	private EntityManager entityManager;
+//	@PersistenceContext
+//	private EntityManager entityManager;
+	
+	@Autowired
+	UserInfoRepository userInfoRepository;
 	
 	private static final Logger logger = LoggerFactory.getLogger(UserInfoService.class);
 
@@ -30,7 +33,8 @@ public class UserInfoService {
 
 		if (userInfo.getUserId() != null) {
 			try {
-				entityManager.persist(userInfo);
+//				entityManager.persist(userInfo);
+				userInfoRepository.save(userInfo);
 				return userInfo;
 			} catch (PersistenceException e) {
 				logger.error("save employee failed with error " + e.getMessage());
@@ -52,7 +56,8 @@ public class UserInfoService {
 	public UserInfo getUserInfoById(String userId) {
 		UserInfo userInfo = null;
 		try {
-			userInfo = entityManager.find(UserInfo.class, userId);
+//			userInfo = entityManager.find(UserInfo.class, userId);
+			userInfo = userInfoRepository.findOne(userId);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (PersistenceException e) {

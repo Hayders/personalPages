@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sap.hcm.cloud.bean.Captcha;
+import com.sap.hcm.cloud.bean.CaptchaBean;
 import com.sap.hcm.cloud.bean.UserLoginBean;
 import com.sap.hcm.cloud.entity.UserInfo;
 import com.sap.hcm.cloud.service.ImageCaptchaService;
@@ -86,7 +86,7 @@ public class PreludeController {
 	}
 
 	@RequestMapping(value = "/varifyCaptcha", method = RequestMethod.POST)
-	public @ResponseBody String verifyCaptcha(HttpServletRequest request, @RequestBody Captcha captcha) throws JsonProcessingException {
+	public @ResponseBody String verifyCaptcha(HttpServletRequest request, @RequestBody CaptchaBean captcha) throws JsonProcessingException {
 		String sRand = imageCaptchaService.getsRand();
 		Map<String, String> result = new HashMap<String, String>();
 		if (captcha.getCaptcha().equals(sRand)) {

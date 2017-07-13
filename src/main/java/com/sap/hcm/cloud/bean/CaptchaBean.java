@@ -1,6 +1,6 @@
 package com.sap.hcm.cloud.bean;
 
-public class Captcha {
+public class CaptchaBean {
 
 	private String captcha;
 
