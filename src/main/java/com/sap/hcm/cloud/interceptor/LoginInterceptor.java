@@ -31,7 +31,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 		if (sessionObj != null) {
 			return true;
 		}
-		response.sendRedirect("../");
+		response.sendRedirect("/prelude/login");
 		return false;
 	}
 

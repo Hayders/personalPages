@@ -23,7 +23,7 @@ $("#btn_login").click(function() {
 				$("#pwdDiv").addClass("has-error");
 				$("#pwdMsg").removeClass("hidden");
 			} else if (e.user) {
-				location.href = getRootPath_web() + "/climax/homePage";
+				location.href = getRootPath_web() + "/climax/homepage";
 				console.log(user);
 			}
 		}

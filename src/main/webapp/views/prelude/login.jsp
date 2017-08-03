@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="<%=basePath%>static/css/mycss/prelude.css">
 </head>
 <body onkeydown="keyLogin()">
-	<img src="<%=basePath%>static/img/background.jpg" width="100%" height="100%"
-		style="z-index: -100; position: absolute; left: 0; top: 0">
+	<%-- <img src="<%=basePath%>static/img/background.jpg" width="100%" height="100%"
+		style="z-index: -100; position: absolute; left: 0; top: 0"> --%>
 	<!--使用模态框的方式模拟一个登陆框-->
 	<div class="modal show" id="loginModal" style="bottom: -43px; top: 20%">
 		<div class="modal-dialog">

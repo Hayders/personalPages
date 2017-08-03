@@ -11,10 +11,10 @@ public class ClimaxController {
 	
 	private static Logger logger = LoggerFactory.getLogger(ClimaxController.class.getName());
 	
-	@RequestMapping("/homePage")
+	@RequestMapping("/homepage")
 	public String homePage(){
 		logger.info("enter into home page");
-		return "climax/homePage";
+		return "climax/homepage";
 	}
 
 }

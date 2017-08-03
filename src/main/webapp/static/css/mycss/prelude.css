@@ -1,3 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+
+	color: #3F3E3C;
+	line-height: 1.5;
+	background: #333;
+}
+
+
 .transparentDiv{
     min-height:300px;  
     color:#fff;  

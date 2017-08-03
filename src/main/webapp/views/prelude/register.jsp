@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="<%=basePath%>static/css/mycss/prelude.css">
 </head>
 <body>
-	<img src="<%=basePath%>static/img/background.jpg" width="100%" height="100%"
-		style="z-index: -100; position: absolute; left: 0; top: 0">
+	<%-- <img src="<%=basePath%>static/img/background.jpg" width="100%" height="100%"
+		style="z-index: -100; position: absolute; left: 0; top: 0"> --%>
 
 	<div class="modal show" id="registerModal" style="bottom: -40px; overflow: auto">
 		<div class="modal-dialog">
