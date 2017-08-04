@@ -30,13 +30,13 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<%=basePath%>climax/homePage/">Hayder</a>
+					<a class="navbar-brand" href="<%=basePath%>climax/homepage/">Hayder</a>
 					<!---方log的地方-->
 				</div>
 				<div id="bs-example-navbar-collapse-1" style="margin-left: 120px">
 					<ul class="nav navbar-nav menu">
 						<li>
-							<a href="<%=basePath%>climax/homePage/">
+							<a href="<%=basePath%>climax/homepage/">
 								博客首页
 								<span class="sr-only"></span>
 							</a>
@@ -74,12 +74,21 @@
 							<a href="#">关于我</a>
 						</li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
+					<ul class="nav navbar-nav navbar-right" id = "RegLog">
 						<li>
 							<a href="<%=basePath%>prelude/login/" id="loginUserId">登录</a>
 						</li>
 						<li>
 							<a href="<%=basePath%>prelude/register/">注册</a>
+						</li>
+					</ul>
+					
+					<ul class="nav navbar-nav navbar-right" id = "PersonalCenter">
+						<li>
+							<a id="UserPersonalCenter">个人中心</a>
+						</li>
+						<li>
+							<a href="<%=basePath%>" id="Logout">退出</a>
 						</li>
 					</ul>
 					<div style="text-align: right; padding-right: 120px; padding-top: 9px">
@@ -186,6 +195,7 @@
 	<!-- fotter end -->
 	<script src="<%=basePath%>static/js/bootstrap/jquery-3.1.1.min.js"></script>
 	<script src="<%=basePath%>static/js/bootstrap/bootstrap.js"></script>
-	<%-- <script src="<%=basePath%>static/js/myjs/homePage.js"></script> --%>
+	<script src="<%=basePath%>static/js/myjs/homepage.js"></script> 
+	<script src="<%=basePath%>static/js/myjs/common.js"></script>
 </body>
 </html>
