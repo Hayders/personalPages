@@ -62,7 +62,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="#">图书推荐</a>
+							<a href="<%=basePath%>climax/moives/">电影赏析</a>
 						</li>
 						<li>
 							<a href="#">生活杂谈</a>
@@ -195,7 +195,7 @@
 	<!-- fotter end -->
 	<script src="<%=basePath%>static/js/bootstrap/jquery-3.1.1.min.js"></script>
 	<script src="<%=basePath%>static/js/bootstrap/bootstrap.js"></script>
-	<script src="<%=basePath%>static/js/myjs/homepage.js"></script> 
+	<script src="<%=basePath%>static/js/myjs/loginValidation.js"></script> 
 	<script src="<%=basePath%>static/js/myjs/common.js"></script>
 </body>
 </html>
