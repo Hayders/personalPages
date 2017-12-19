@@ -1,4 +1,4 @@
-window.onload = function verifyUserLogin() {
+$(document).ready(function verifyUserLogin() {
 
 	$("#PersonalCenter").toggle();
 
@@ -18,7 +18,7 @@ window.onload = function verifyUserLogin() {
 		}
 
 	});
-};
+});
 
 $("#Logout").click(function() {
 

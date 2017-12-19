@@ -1,25 +1,31 @@
 package com.sap.hcm.cloud.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sap.hcm.cloud.entity.moives.Moive;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sap.hcm.cloud.service.MoiveService;
 
 @Controller
 @RequestMapping("/climax")
 public class ClimaxController {
 	
 	private static Logger logger = LoggerFactory.getLogger(ClimaxController.class.getName());
+	
+	private ObjectMapper objectMapper = new ObjectMapper();
+	
+	@Autowired
+	MoiveService moiveService;
 	
 	@RequestMapping("/homepage")
 	public String homePage(){
@@ -34,10 +40,9 @@ public class ClimaxController {
 	}
 	
 	@RequestMapping(value = "/getRecentHotMoives",method = RequestMethod.GET)
-	public void getRecentHotMoives(HttpServletRequest request,HttpServletResponse response){
-		
-		
-		
+	public @ResponseBody String getRecentHotMoives(HttpServletRequest request,HttpServletResponse response) throws JsonProcessingException{
+		String moiveList = moiveService.getMoiveList(true);
+		return objectMapper.writeValueAsString(moiveList);
 	}
 	
 	@RequestMapping(value = "/getHttpSessionObj", method = RequestMethod.GET)

@@ -123,9 +123,7 @@ public class ImageCaptchaService {
 	}
 
 	public Color getRandColor(int fc, int bc) {
-
 		random = new Random();
-
 		if (fc > 255) {
 			fc = 255;
 		}
@@ -136,9 +134,8 @@ public class ImageCaptchaService {
 		int r = fc + random.nextInt(bc - fc);
 		int g = fc + random.nextInt(bc - fc);
 		int b = fc + random.nextInt(bc - fc);
-
+		
 		return new Color(r, g, b);
-
 	}
 
 	public String randomRand(int n) {
